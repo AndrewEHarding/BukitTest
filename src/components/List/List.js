@@ -11,7 +11,9 @@ const List = props => {
                     return (
                         <CollapsibleItem header={item.city} icon="filter_drama">
                             <h5>Here's some info on {item.city}!</h5>
-                            
+                            <ul>
+                                <li></li>
+                            </ul>
                         </CollapsibleItem>
                     );
                 })}
