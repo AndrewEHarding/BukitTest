@@ -18,6 +18,7 @@ const List = props => {
                             {item.notes.map(note => {
                                 return (<p>{note}</p>)
                             })}
+                            <textarea rows="10" col="5" placeholder="Write a new note..."></textarea>
                         </CollapsibleItem>
                     );
                 })}
