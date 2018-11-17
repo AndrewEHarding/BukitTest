@@ -29,6 +29,7 @@ class NewCity extends React.Component {
                         name="cityName"
                         value={this.state.cityName}
                         onChange={this.handleInputChange}
+                        maxLength={40}
                         s={6}
                         label="City Name"
                     />
@@ -36,6 +37,7 @@ class NewCity extends React.Component {
                         name="stateName"
                         value={this.state.stateName}
                         onChange={this.handleInputChange}
+                        maxLength={2}
                         s={6}
                         label="State Name"
                     />
