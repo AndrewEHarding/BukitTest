@@ -1,6 +1,6 @@
 import React from "react";
 import "./List.css";
-import { Button, Collapsible, CollapsibleItem, Icon } from "react-materialize";
+import { Button, Collapsible, CollapsibleItem, Modal, Icon, Row, Input } from "react-materialize";
 
 
 const List = props => {
@@ -20,12 +20,26 @@ const List = props => {
                                 return (<p key={note}>{note}</p>)
                             })}
                             <textarea rows="10" col="5" placeholder="Write a new note..."></textarea>
-                            <Button waves='light'>Add New Note<Icon right>send</Icon></Button>
+                            <Button waves='light' onClick={() => console.log('add note')}>Add New Note<Icon right>send</Icon></Button>
+                            <Button waves='light' onClick={() => console.log('remove city')}>Remove City<Icon right>delete</Icon></Button>
                         </CollapsibleItem>
                     );
                 })}
             </Collapsible>
-            <Button floating large className='red' waves='light' icon='add' />
+            <Modal
+                header='Add a New City to Your List'
+                trigger={<Button floating large className='red' waves='light' icon='add' />}>
+                <Row>
+                    <Input s={6} label="City Name" />
+                    <Input s={6} label="State" />
+                </Row>
+                Have you visited this city before?
+                <Row>
+                    <Input name='on' type='switch' value='1' />
+                    <Input name='group1' type='checkbox' value='red' label='Already Visited' />
+                </Row>
+                <Button waves='light' onClick={() => console.log('add city')}>Add City to List<Icon right>send</Icon></Button>
+            </Modal>
         </div>
     );
 };
