@@ -47,7 +47,7 @@ class NewCity extends React.Component {
                     <Input
                         name='visited'
                         type='checkbox'
-                        value={this.state.visited}
+                        checked={this.state.visited}
                         onChange={this.handleInputChange}
                         label='Already Visited' />
                 </Row>

@@ -8,7 +8,7 @@ import NewNote from "../NewNote";
 const List = props => {
     return (
         <div>
-            {props.user.list.length == 0 ? `You do not currently have any cities on your list.` :
+            {props.user.list.length === 0 ? `You do not currently have any cities on your list.` :
                 <Collapsible popout>
                     {props.user.list.map(item => {
                         return (
@@ -19,7 +19,7 @@ const List = props => {
                                     <li>Weather:</li>
                                     <li>Current News:</li>
                                 </ul>
-                                {item.notes.length == 0 ? `You do not currently have any notes.` : item.notes.map(note => {
+                                {item.notes.length === 0 ? `You do not currently have any notes.` : item.notes.map(note => {
                                     return (<p key={note}>{note}</p>)
                                 })}
                                 <NewNote />

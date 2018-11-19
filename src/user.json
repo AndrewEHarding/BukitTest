@@ -4,7 +4,10 @@
     "list": [        {
             "city": "New York",
             "visited": true,
-            "notes": []
+            "notes": [
+                "This is my first note on New York City! Nunc sodales id odio id tincidunt. Nullam sollicitudin lobortis orci, vel maximus justo rutrum et. Nullam tempor, nibh id faucibus sollicitudin, erat est egestas sapien, id auctor nisi nibh sit amet elit. Ut bibendum suscipit eleifend. Donec vel urna eu nibh eleifend elementum.",
+                "In hac habitasse platea dictumst. Maecenas interdum accumsan sem vel consequat. Nullam semper ultricies nibh, et interdum sem semper a."
+            ]
         },
         {
             "city": "Chicago",
