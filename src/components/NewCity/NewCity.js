@@ -42,7 +42,7 @@ class NewCity extends React.Component {
                         label="State Name"
                     />
                 </Row>
-                Have you visited this city before?
+                {/* Have you visited this city before?
                 <Row>
                     <Input
                         name='visited'
@@ -50,7 +50,7 @@ class NewCity extends React.Component {
                         checked={this.state.visited}
                         onChange={this.handleInputChange}
                         label='Already Visited' />
-                </Row>
+                </Row> */}
                 <Button waves='light' onClick={() => console.log(`${this.state.cityName}, ${this.state.stateName}, Visited: ${this.state.visited}`)}>Add City to List<Icon right>send</Icon></Button>
             </Modal>
         );
