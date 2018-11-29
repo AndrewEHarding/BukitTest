@@ -23,7 +23,7 @@ class NewCity extends React.Component {
         return (
             <Modal
                 header='Add a New City to Your List'
-                trigger={<Button floating large className='red' waves='light' icon='add' />}>
+                trigger={<Button floating large className='blue' waves='light' icon='add' />}>
                 <Row>
                     <Input
                         name="cityName"
@@ -42,15 +42,15 @@ class NewCity extends React.Component {
                         label="State Name"
                     />
                 </Row>
-                Have you visited this city before?
+                {/* Have you visited this city before?
                 <Row>
                     <Input
                         name='visited'
                         type='checkbox'
-                        value={this.state.visited}
+                        checked={this.state.visited}
                         onChange={this.handleInputChange}
                         label='Already Visited' />
-                </Row>
+                </Row> */}
                 <Button waves='light' onClick={() => console.log(`${this.state.cityName}, ${this.state.stateName}, Visited: ${this.state.visited}`)}>Add City to List<Icon right>send</Icon></Button>
             </Modal>
         );
