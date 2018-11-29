@@ -56,7 +56,7 @@ class News extends React.Component {
                                 <img class="articleImage" src={item.urlToImage} width="100" height="75"></img>
                             </li>
                             <li>
-                                <Moment format="DD/MM/YYYY">
+                                <Moment format="MM/DD/YYYY">
                                     {item.publishedAt}
                                 </Moment>
                             </li>
