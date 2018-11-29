@@ -3,9 +3,87 @@ import "./List.css";
 import { Button, Collapsible, CollapsibleItem, Icon } from "react-materialize";
 import NewCity from "../NewCity";
 import NewNote from "../NewNote";
+import News from "./News"
 
+
+// function News(props)
+// {
+
+//     return(
+//     // <ul>
+//       <li className="articleTitle"></li>
+//     //     <li className="articleURL"></li>
+//     //     <li className="articleDate"></li>
+//     // </ul>
+//     );
+// }
 
 const List = props => {
+
+
+    // function renderNews(i){
+
+    //     var queryURL = "https://newsapi.org/v2/everything?q=" + NewCity + "&apiKey=e98708c0ae604c1c80859a0725b9b24a";
+
+
+    //     fetch(queryURL)
+    //       .then(res => res.json())
+    //       .then(
+    //         (result) => {
+    //           this.setState({
+    //             isLoaded: true,
+    //             items: result.items,
+    //             article: items[i]
+
+    //           });
+    //         },
+    //         // Note: it's important to handle errors here
+    //         // instead of a catch() block so that we don't swallow
+    //         // exceptions from actual bugs in components.
+    //         (error) => {
+    //           this.setState({
+    //             isLoaded: true,
+    //             error
+    //           });
+    //         }
+    //       )
+
+    //         console.log(this.items);
+
+
+    //             var title = article.title;
+
+    //             console.log(title);
+    //             // $(".articleTitle").append(
+    //             //     articleCount +
+    //             //     ". " +
+    //             //     title 
+    //             // );
+
+    //             var url = article.url;
+
+    //             // console.log(url);
+    //             // $(".articleURL").append(
+    //             //    url
+    //             // );
+
+    //             var date = article.publishedAt;
+
+    //             // console.log(date);
+    //             // $(".articleDate").append(
+    //             //     date
+    //             // );                
+
+
+    //     return (
+    //         <News
+    //           value={this.title}
+    //         />
+    //       );
+
+
+    // }
+
     return (
         <div>
             {props.user.list.length === 0 ? `You do not currently have any cities on your list.` :
@@ -33,6 +111,7 @@ const List = props => {
             }
 
             <NewCity />
+
         </div>
     );
 };
