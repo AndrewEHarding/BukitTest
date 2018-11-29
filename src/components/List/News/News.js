@@ -14,7 +14,7 @@ class News extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://newsapi.org/v2/everything?q=" + this.props.city + "&pageSize=2&apiKey=e98708c0ae604c1c80859a0725b9b24a")
+        fetch("https://newsapi.org/v2/everything?q=" + this.props.city + "&pageSize=3&apiKey=e98708c0ae604c1c80859a0725b9b24a")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -53,7 +53,7 @@ class News extends React.Component {
                                 </h5>
                             </li>
                             <li>
-                                <img class="articleImage" src={item.urlToImage} width="100" height="75"></img>
+                                <img className="articleImage" src={item.urlToImage} width="100" height="75" alt="article"></img>
                             </li>
                             <li>
                                 <Moment format="MM/DD/YYYY">
