@@ -1,29 +1,33 @@
 import React from "react";
 import Moment from "react-moment";
-import "./News.css";
+import "./Weather.css";
 
 
-class News extends React.Component {
+class Weather extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             error: null,
             isLoaded: false,
-            items: []
-            
+            items: [],
+            temperature: ""
         };
     }
 
     componentDidMount() {
-        fetch("https://newsapi.org/v2/everything?q=" + this.props.city + "&pageSize=3&apiKey=e98708c0ae604c1c80859a0725b9b24a")
+        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.props.city},us&appid=70439c79cebf51416398a33b121030b1&units=imperial`)
             .then(res => res.json())
             .then(
                 (result) => {
                     console.log(result);
                     this.setState({
                         isLoaded: true,
-                        items: result.articles
+                        conditions: (Object.values(result.main)),
+                        items: result.weather,
+                        temperature: result.main.temp
+                       
                     });
+                    // console.log(conditions);
                 },
                 // Note: it's important to handle errors here
                 // instead of a catch() block so that we don't swallow
@@ -46,30 +50,30 @@ class News extends React.Component {
         } else {
             return (
                 <div>
-                    {items.map(item => (
-                        <ul key={item.title}>
+                     
+                        <ul>
                             <li>
-                                <h5>
-                                    {item.title}
-                                </h5>
+                                   
+                
                             </li>
                             <li>
-                                <img className="articleImage" src={item.urlToImage} width="100" height="75" alt="article"></img>
+                                <img className="weatherImage" src={'http://openweathermap.org/img/w/'+this.state.items[0].icon +'.png'} width="100" height="75" alt="weather-icon"></img>
+                                
                             </li>
-                            <li>
-                                <Moment format="MM/DD/YYYY">
-                                    {item.publishedAt}
-                                </Moment>
-                            </li>
-                            <li>
-                                <a href={item.url}>Read Here</a>
-                            </li>
+                            
+                            <li>Temperature: {this.state.temperature}&deg;F</li>
+                                <li>  Description: {this.state.items[0].description}</li>
+                        
                         </ul>
-                    ))}
+                   
+
+            
+                    
+                    
                 </div>
             )
         }
     }
 }
 
-export default News;
+export default Weather;

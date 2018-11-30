@@ -3,7 +3,8 @@ import "./List.css";
 import { Button, Collapsible, CollapsibleItem, Icon, Modal } from "react-materialize";
 import NewCity from "../NewCity";
 import NewNote from "../NewNote";
-import News from "./News"
+import News from "./News";
+import Weather from "./Weather";
 
 const List = props => {
 
@@ -17,6 +18,7 @@ const List = props => {
                                 <h5>Here's some info on {item.city}!</h5>
                                 {item.visited ? `You have visited ${item.city}!` : `You have not visited ${item.city} yet!`}
                                 <h5>Weather:</h5>
+                                <div><Weather city={item.city} /></div>
                                 <h5>Current News:</h5>
                                 <div><News city={item.city} /></div>
                                 <h5>Your Notes:</h5>
