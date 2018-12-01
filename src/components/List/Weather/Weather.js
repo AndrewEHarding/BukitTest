@@ -21,7 +21,6 @@ class Weather extends React.Component {
                     console.log(result);
                     this.setState({
                         isLoaded: true,
-                        conditions: (Object.values(result.main)),
                         items: result.weather,
                         temperature: result.main.temp
                        
